@@ -1,0 +1,177 @@
+.contacto-container {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 180px);
+  padding: 3rem 1.5rem;
+}
+
+.contacto-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contacto-header {
+  margin-bottom: 2rem;
+}
+
+.contacto-header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.contacto-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 850px) {
+  .contacto-grid {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Tarjetas */
+.card {
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.form-card {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Tarjeta de Validaciones */
+.validaciones-card {
+  background-color: #eef6ff;
+  border: none;
+  min-height: 180px;
+}
+
+.validaciones-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.validaciones-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.validaciones-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Íconos e Indicadores */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.error-icon {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.errores-list li {
+  color: #dc2626;
+}
+
+.success-icon {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.exitos-list li {
+  color: #059669;
+}
+
+.validaciones-divider {
+  border: none;
+  border-top: 1px solid #dbeafe;
+  margin: 1rem 0;
+}
+
+/* Formulario e Inputs */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #334155;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Botón */
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-submit:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}

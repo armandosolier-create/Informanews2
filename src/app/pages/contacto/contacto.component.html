@@ -1,0 +1,111 @@
+<div class="contacto-container">
+  <div class="contacto-content">
+    <header class="contacto-header">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes una pregunta, sugerencia o quieres compartir una noticia?</p>
+    </header>
+
+    <div class="contacto-grid">
+      <!-- Tarjeta del Formulario -->
+      <div class="card form-card">
+        <form [formGroup]="contactoForm" (ngSubmit)="onSubmit()">
+          
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input 
+              id="nombre" 
+              type="text" 
+              formControlName="nombre" 
+              placeholder="Escribe tu nombre"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo electrónico *</label>
+            <input 
+              id="correo" 
+              type="email" 
+              formControlName="correo" 
+              placeholder="correo@ejemplo.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="asunto">Asunto *</label>
+            <input 
+              id="asunto" 
+              type="text" 
+              formControlName="asunto" 
+              placeholder="Motivo del contacto"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea 
+              id="mensaje" 
+              rows="4" 
+              formControlName="mensaje" 
+              placeholder="Escribe tu mensaje..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" [disabled]="contactoForm.invalid">
+            Enviar mensaje
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Tarjeta de Validaciones estilo Mockup -->
+      <div class="card validaciones-card">
+        <h2>Validaciones</h2>
+
+        <div class="validaciones-body">
+          <!-- Lista de Errores / Pendientes en Rojo -->
+          <ul class="validaciones-list errores-list">
+            <li *ngIf="nombreControl?.invalid">
+              <span class="icon error-icon">!</span>
+              <span>{{ getMensajeErrorNombre() }}</span>
+            </li>
+            <li *ngIf="correoControl?.invalid">
+              <span class="icon error-icon">!</span>
+              <span>{{ getMensajeErrorCorreo() }}</span>
+            </li>
+            <li *ngIf="asuntoControl?.invalid">
+              <span class="icon error-icon">!</span>
+              <span>{{ getMensajeErrorAsunto() }}</span>
+            </li>
+            <li *ngIf="mensajeControl?.invalid">
+              <span class="icon error-icon">!</span>
+              <span>{{ getMensajeErrorMensaje() }}</span>
+            </li>
+          </ul>
+
+          <!-- Línea Divisoria -->
+          <hr *ngIf="hayErrores && hayExitos" class="validaciones-divider" />
+
+          <!-- Lista de Aciertos en Verde -->
+          <ul class="validaciones-list exitos-list">
+            <li *ngIf="nombreControl?.valid">
+              <span class="icon success-icon">✓</span>
+              <span>Nombre ingresado.</span>
+            </li>
+            <li *ngIf="correoControl?.valid">
+              <span class="icon success-icon">✓</span>
+              <span>Correo válido.</span>
+            </li>
+            <li *ngIf="asuntoControl?.valid">
+              <span class="icon success-icon">✓</span>
+              <span>Asunto ingresado.</span>
+            </li>
+            <li *ngIf="mensajeControl?.valid">
+              <span class="icon success-icon">✓</span>
+              <span>Mensaje ingresado.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
